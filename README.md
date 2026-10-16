@@ -1,2 +1,2 @@
 # Impacta
-Repositório do projeto de uma página com serviços sociais
+Repositório do projeto da página da Impacta Tecnologia
