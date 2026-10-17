@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacta Tech - Tecnologia e Inteligência Para Transformação Social</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+    <!-- Fundo em Aquarela -->
+    <div class="bg-layer"></div>
+    <div class="bg-overlay"></div>
+
+    <!-- Cabeçalho -->
+    <header class="page-header">
+        <div class="header-content">
+            <span class="brand-text">IMPACTA</span>
+            <span class="brand-subtext">TECNOLOGIA E INTELIGÊNCIA PARA TRANSFORMAÇÃO</span>
+        </div>
+    </header>
+
+    <!-- Layout Principal -->
+    <main class="main-wrapper">
+        <div class="app-layout">
+            
+            <!-- ESQUERDA: Marca e Navegação -->
+            <aside class="sidebar-left card-glass">
+                <div class="brand-box">
+                    <img src="impactateclogo.png" alt="Impacta Tech Logo" class="brand-logo">
+                </div>
+                
+                <nav class="nav-menu">
+                    <button class="nav-item" onclick="showContent('quem-somos')">
+                        <i class="fas fa-users-viewfinder"></i>
+                        <span>Quem Somos</span>
+                    </button>
+                    <button class="nav-item" onclick="showContent('clientes')">
+                        <i class="fas fa-handshake-angle"></i>
+                        <span>Nossos Clientes</span>
+                    </button>
+                    <button class="nav-item" onclick="showContent('painel-jatai')">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Painel Jataí</span>
+                    </button>
+                    <button class="nav-item" onclick="showContent('contato')">
+                        <i class="fas fa-headset"></i>
+                        <span>Contato</span>
+                    </button>
+                </nav>
+            </aside>
+
+            <!-- CENTRO: Carrossel -->
+            <section class="main-content">
+                <div class="carousel-card card-glass">
+                    <div class="carousel-window">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide active">
+                                <img src="news1.jpg" alt="Impacta Tech Lança Novo Produto" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80'">
+                                <div class="slide-overlay">
+                                    <span class="slide-badge">Inovação</span>
+                                    <h3>Impacta Tech lança novo produto</h3>
+                                    <p>Conheça nossa mais recente ferramenta voltada ao apoio a investidores na gestão de carteiras e análise de compras de ativos.</p>
+                                    <a href="#" class="btn-link" onclick="openModalNews('Impacta Tech lança novo produto', 'Nossa nova plataforma otimiza a gestão de dados sociais em tempo real.')">Leia mais <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="news2.jpg" alt="Parceria com grandes empresas" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80'">
+                                <div class="slide-overlay">
+                                    <span class="slide-badge">Parcerias</span>
+                                    <h3>Parceria com grandes empresas</h3>
+                                    <p>Conheça o E-MeuPet, nossa ferramenta de apoio à gestão do ecossistema do mercado de Pets e facilitação para tutores.</p>
+                                    <a href="#" class="btn-link" onclick="openModalNews('Parceria com grandes empresas', 'Firmamos parcerias estratégicas para expansão de tecnologia inteligente.')">Leia mais <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="news3.jpg" alt="Evento de tecnologia 2026" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80'">
+                                <div class="slide-overlay">
+                                    <span class="slide-badge">Eventos</span>
+                                    <h3>Evento de tecnologia 2026</h3>
+                                    <p>Participe do nosso próximo evento presencial com palestrantes renomados do setor.</p>
+                                    <a href="#" class="btn-link" onclick="openModalNews('Evento de tecnologia 2026', 'Garanta sua vaga no maior simpósio de tecnologia e impacto do estado.')">Leia mais <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control prev" onclick="prevSlide()" aria-label="Anterior">&#10094;</button>
+                    <button class="carousel-control next" onclick="nextSlide()" aria-label="Próximo">&#10095;</button>
+
+                    <div class="carousel-dots" id="carouselDots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DIREITA: Login, Cadastro e Pesquisas -->
+            <aside class="sidebar-right">
+                
+                <div class="card-glass widget-box">
+                    <div class="widget-header">
+                        <i class="fas fa-user-lock"></i>
+                        <h3>Acesso ao Sistema</h3>
+                    </div>
+                    <form id="login-form" onsubmit="handleLogin(event)">
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" placeholder="Usuário ou e-mail" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Senha" required>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <span>Entrar</span>
+                            <i class="fas fa-right-to-bracket"></i>
+                        </button>
+                        <a href="#" class="forgot-link" onclick="alertToast('Recuperação de senha enviada para seu e-mail.')">Esqueceu a senha?</a>
+                    </form>
+                </div>
+
+                <div class="card-glass widget-box">
+                    <div class="widget-header">
+                        <i class="fas fa-user-plus"></i>
+                        <h3>Cadastre-se</h3>
+                    </div>
+                    <p class="widget-desc">Ainda não tem acesso à nossa plataforma?</p>
+                    <button class="btn-secondary" onclick="openCadastroModal()">
+                        <span>Criar Conta</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="card-glass widget-box">
+                    <div class="widget-header">
+                        <i class="fas fa-poll-h"></i>
+                        <h3>Enquetes & Opinião</h3>
+                    </div>
+                    <ul class="poll-list">
+                        <li>
+                            <a href="#" onclick="openPoll('Opinião sobre novos produtos')">
+                                <i class="fas fa-chevron-right"></i> Opinião sobre novos produtos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="openPoll('Satisfação com serviços')">
+                                <i class="fas fa-chevron-right"></i> Satisfação com serviços
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="openPoll('Próximos eventos')">
+                                <i class="fas fa-chevron-right"></i> Próximos eventos
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="page-footer">
+        <p>&copy; 2026 Impacta Tech &bull; Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Modal Dinâmico -->
+    <div id="dynamic-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Toast de Notificação -->
+    <div id="toast" class="toast-notification">
+        <i class="fas fa-info-circle"></i>
+        <span id="toast-text">Mensagem</span>
+    </div>
+
+    <!-- JS Externo -->
+    <script src="Script.js"></script>
+</body>
+</html>
