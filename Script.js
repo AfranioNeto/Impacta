@@ -71,7 +71,7 @@ function showContent(type) {
                 <p style="margin-bottom: 14px; color: var(--text-muted);">Orgulho de fazer parceria com grandes marcas e iniciativas sociais:</p>
                 <ul style="list-style: none; display: grid; gap: 8px;">
                     <li style="padding: 8px; background: #f5f5f7; border-radius: 6px;"><i class="fas fa-building" style="color:var(--primary-cyan)"></i> Governo & Setor Público</li>
-                    <li style="padding: 8px; background: #f5f5f7; border-radius: 6px;"><i class="fa-solid fa-sliders" style="color:var(--primary-cyan)"></i> <a href="https://metodovasco.com.br" style="text-decoration: none; color: inherit;">Método VASCO</a>Método V.A.S.C.O.</a></li>
+                    <li style="padding: 8px; background: #f5f5f7; border-radius: 6px;"><i class="fa-solid fa-sliders" style="color:var(--primary-cyan)"></i> <a href="https://metodovasco.com.br">Método V.A.S.C.O.</a></li>
                     <li style="padding: 8px; background: #f5f5f7; border-radius: 6px;"><i class="fa-solid fa-dog" style="color:var(--primary-cyan)"></i> E-MeuPet</li>
                 </ul>
             `;
